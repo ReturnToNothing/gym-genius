@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html dir="ltr" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Gym Genius - User Form</title>
+
+    <link href="css/normalize.css" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"
+        integrity="sha512-GsLlZN/3F2ErC5ifS5QtgpiJtWd43JWSuIgh7mbzZ8zBps+dvLusV+eNQATqgA/HdeKFVgA5v3S/cIrLF7QnIg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/index.js"></script>
+</head>
+
+<body class="page-body page-body--registration" id="page-body">
+    <header class="header">
+        <img class="header__loadscreen u-fade-in u-hidden" id="screen-loader" src="resources/images/first-logo.png"
+            alt="Gym Genius: AI-Powered Fitness & Nutrition White-label">
+        <div class="header__container" id="header-container">
+            <nav class="header__nav">
+                <div class="logo">
+                    <img class="logo__img" src="resources/images/fourth-logo.png" alt="Gym Genius Logo">
+                    <span class="logo__text">Gym Genius</span>
+                </div>
+
+                <div class="header__menu">
+                    <div class="nav-button">
+                        <input type="button" class="nav-button__input" id="home-button" value="Home">
+                        <label class="nav-button__label" for="home-button">Return Home</label>
+                    </div>
+                    <div class="nav-button">
+                        <input type="button" class="nav-button__input" id="about-button" value="About">
+                        <label class="nav-button__label" for="about-button">About Our Business</label>
+                    </div>
+                    <div class="nav-button">
+                        <input type="button" class="nav-button__input" id="contact-button" value="Contact">
+                        <label class="nav-button__label" for="contact-button">Contact Us</label>
+                    </div>
+                    <div class="nav-button">
+                        <input type="button" class="nav-button__input" id="blog-button" value="Blog">
+                        <label class="nav-button__label" for="blog-button">View Our Blog</label>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main-content">
+        <section class="submission" id="submission-container">
+
+            <div class="submission__blob" id="submission-blob"></div>
+
+            <div class="submission__container">
+                <div class="submission__step-indicator">
+                    <div class="step-indicator__item step-indicator__item--active" id="step-indicator-one">
+                        <div class="step-indicator__icon-box">
+                            <span class="material-symbols-outlined">person</span>
+                        </div>
+                        <span class="step-indicator__label">Biometrics</span>
+                    </div>
+                    <div class="step-indicator__item" id="step-indicator-two">
+                        <div class="step-indicator__icon-box">
+                            <span class="material-symbols-outlined">target</span>
+                        </div>
+                        <span class="step-indicator__label">Goals</span>
+                    </div>
+                    <div class="step-indicator__item" id="step-indicator-three">
+                        <div class="step-indicator__icon-box">
+                            <span class="material-symbols-outlined">tune</span>
+                        </div>
+                        <span class="step-indicator__label">Preferences</span>
+                    </div>
+                    <div class="step-indicator__item" id="step-indicator-four">
+                        <div class="step-indicator__icon-box">
+                            <span class="material-symbols-outlined">fitness_center</span>
+                        </div>
+                        <span class="step-indicator__label">Lifestyles</span>
+                    </div>
+                    <div class="step-indicator__item" id="step-indicator-five">
+                        <div class="step-indicator__icon-box">
+                            <span class="material-symbols-outlined">wand_stars</span>
+                        </div>
+                        <span class="step-indicator__label">Confirmation</span>
+                    </div>
+                </div>
+
+                <form class="submission-form" id="submission-form">
+                    <div class="submission-form__container" id="submission-container-one">
+                        <div class="submission-form__logo">
+                            <span class="material-symbols-outlined">image</span>
+                            <img class="custom-card__logo-img" id="submission-logo-img" alt="">
+                            <!-- Actual <img> would go here after upload -->
+                        </div>
+                        <h1 class="submission-form__title">Ready To Join Gym Genius?</h1>
+                        <h2 class="submission-form__subtitle">Create your Personal Plan Now</h2>
+                        <h3 class="submission-form__description">Join with thousands of members from your chosen (gym)
+                            who are benefited of receiving workout & nutrition plans, discounts and much more!</h3>
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <input type="submit" class="auth-form__submit-btn" id="submission-btn" value="Get Started">
+                            <label class="u-hidden" for="submission-btn">Get Started</label>
+                        </div>
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-two">
+                        <h1 class="submission-form__title">Let's start about you.</h1>
+                        <h2 class="submission-form__description">This information helps our AI generate a safe and
+                            highly
+                            personalised plan for you</h2>
+
+                        <div class="submission-form__logo preview">
+                            <span class="material-symbols-outlined">image</span>
+                            <img class="custom-card__logo-img" id="submission-logo-img" alt="">
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">person</span>
+                            <input type="number" class="auth-form__input" id="age-input" placeholder=" "
+                                inputmode="numeric" autocomplete="off" />
+                            <label class="auth-form__label" for="age-input">Age</label>
+                            <p class="auth-form__placeholder">&#40;e.g, 24 years&#41;</p>
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">weight</span>
+                            <input type="number" class="auth-form__input" id="weight-input" placeholder=" "
+                                inputmode="numeric" autocomplete="off" />
+                            <label class="auth-form__label" for="weight-input">Weight</label>
+                            <p class="auth-form__placeholder">&#40;e.g, 80kg&#41;</p>
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">height</span>
+                            <input type="number" class="auth-form__input" id="height-input" placeholder=" "
+                                inputmode="numeric" autocomplete="off" />
+                            <label class="auth-form__label" for="height-input">Height</label>
+                            <p class="auth-form__placeholder">&#40;e.g, 180.3cm&#41;</p>
+                        </div>
+
+                        <div class="gender-form__field">
+                            <div class="gender-field__select-wrapper">
+                                <select id="gender-input" class="gender-field__select">
+                                    <option value="" disabled selected>Gender</option>
+                                    <option value="male">Male</option>
+                                    <option value="female">Female</option>
+                                    <option value="unknown">Prefer not to say</option>
+                                </select>
+                                <span class="material-symbols-outlined gender-field__icon">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <input type="submit" class="auth-form__submit-btn" id="submission-btn-one"
+                                value="Next Step">
+                            <label class="u-hidden" for="submission-btn-one">Next Step</label>
+                        </div>
+
+                        <!---
+                        <div class="submission-form__navigation">
+                            <div class="navigation__group">
+                                <span class="navigation__icon material-symbols-outlined">arrow_back_2</span>
+                                <input type="button" class="navigation__btn navigation__btn--prev" id="prev-button-one">
+                                <label class="u-hidden" for="prev-button-one">Move Backwards</label>
+                            </div>
+                            <div class="navigation__group">
+                                <span class="navigation__icon material-symbols-outlined">play_arrow</span>
+                                <input type="button" class="navigation__btn navigation__btn--prev" id="next-button-one">
+                                <label class="u-hidden" for="prev-button-one">Move Forward</label>
+                            </div>
+                        </div>
+                        -->
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-three">
+                        <h1 class="submission-form__title">What about your goals?</h1>
+                        <h2 class="submission-form__description">This information helps our AI generate a safe and
+                            highly
+                            personalised plan for you</h2>
+
+                        <div class="submission-form__logo preview">
+                            <span class="material-symbols-outlined">image</span>
+                            <img class="custom-card__logo-img" id="submission-logo-img" alt="">
+                        </div>
+
+                        <!--TODO: Replace these containers into actual buttons-->
+                        <div class="auth-form__group">
+                            <div class="auth-form__card" id="strength-input" value="1">
+                                <span class="auth-form__icon--large material-symbols-outlined">fitness_center</span>
+                                <p class="card__placeholder">Build Strength</p>
+                            </div>
+                            <div class="auth-form__card" id="improve-input" value="2">
+                                <span class="auth-form__icon--large material-symbols-outlined">sports_gymnastics</span>
+                                <p class="card__placeholder">Improve Definition</p>
+                            </div>
+                            <div class="auth-form__card" id="maintain-input" value="3">
+                                <span class="auth-form__icon--large  material-symbols-outlined">balance</span>
+                                <p class="card__placeholder">Maintain Wellness</p>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">adjust</span>
+                            <input type="number" class="auth-form__input" id="target-weight-input" placeholder=" "
+                                inputmode="numeric" autocomplete="off" />
+                            <label class="auth-form__label" for="target-weight-input">Target Weight</label>
+                            <p class="auth-form__placeholder">&#40;e.g, 70kg&#41;</p>
+                        </div>
+
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <input type="submit" class="auth-form__submit-btn" id="submission-btn-two"
+                                value="Next Step">
+                            <label class="u-hidden" for="submission-btn-two">Next Step</label>
+                        </div>
+
+                        <div class="submission-form__navigation">
+                            <div class="navigation__group">
+                                <span class="navigation__icon material-symbols-outlined">arrow_back_2</span>
+                                <input type="button" class="navigation__btn navigation__btn--prev" id="prev-btn-one">
+                                <label class="u-hidden" for="prev-button-one">Move Backwards</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-four">
+                        <h1 class="submission-form__title">What about your preferences?</h1>
+                        <h2 class="submission-form__description">This information helps our AI generate a accurate and
+                            highly personalised plan for you</h2>
+
+                        <div class="submission-form__logo preview">
+                            <span class="material-symbols-outlined">image</span>
+                            <img class="custom-card__logo-img" id="submission-logo-img" alt="">
+                        </div>
+
+                        <!-- Experience level-->
+                        <div class="lifecycle-form__field">
+                            <label class="lifestyle-field__label" for="experience-level">Fitness Experience
+                                Level:</label>
+                            <div class="lifestyle-field__select-wrapper">
+                                <select id="experience-level" class="lifestyle-field__select">
+                                    <option value="" disabled selected>Select Your Experience Level</option>
+                                    <option value="beginner">Beginner</option>
+                                    <option value="intermediate">Intermediate</option>
+                                    <option value="advanced">Advanced</option>
+                                </select>
+                                <span class="material-symbols-outlined lifestyle-field__icon">expand_more</span>
+                            </div>
+                        </div>
+
+                        <!--Training Frequency-->
+                        <div class="lifecycle-form__field--lower">
+                            <label class="lifestyle-field__label" for="training-frequency">Training Frequency:</label>
+                            <div class="lifestyle-field__select-wrapper">
+                                <select id="training-frequency" class="lifestyle-field__select">
+                                    <option value="" disabled selected>Select Your Training Frequency</option>
+                                    <option value="6-7">6-7 Days</option>
+                                    <option value="4-5">4-5 Days</option>
+                                    <option value="2-3">2-3 Days</option>
+                                    <option value=">2">&lt;2 Days</option>
+                                </select>
+                                <span class="material-symbols-outlined lifestyle-field__icon">expand_more</span>
+                            </div>
+                        </div>
+
+                        <!--Menu Preference-->
+                        <div class="lifecycle-form__field--lower">
+                            <label class="lifestyle-field__label" for="menu-preference">Menu Preference:</label>
+                            <div class="lifestyle-field__select-wrapper">
+                                <select id="menu-preference" class="lifestyle-field__select">
+                                    <option value="" disabled selected>Select Your Menu Preference</option>
+                                    <option value="none">None</option>
+                                    <option value="vegetarian">Vegetarian</option>
+                                    <option value="vegan">Vegan</option>
+                                    <option value="keto">Keto / Low Carb</option>
+                                    <option value="pescatarian">Pescatarian</option>
+                                </select>
+                                <span class="material-symbols-outlined lifestyle-field__icon">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">podiatry</span>
+                            <input type="text" class="auth-form__input" id="limitations-input" placeholder=" "
+                                autocomplete="off" />
+                            <label class="auth-form__label" for="limitations-input">Limitations / Injuries</label>
+                            <p class="auth-form__placeholder">&#40;e.g, Bad Knees&#41;</p>
+                        </div>
+
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <input type="submit" class="auth-form__submit-btn" id="submission-btn-three"
+                                value="Next Step">
+                            <label class="u-hidden" for="submission-btn-three">Next Step</label>
+                        </div>
+
+                        <div class="submission-form__navigation">
+                            <div class="navigation__group">
+                                <span class="navigation__icon material-symbols-outlined">arrow_back_2</span>
+                                <input type="button" class="navigation__btn navigation__btn--prev" id="prev-btn-two">
+                                <label class="u-hidden" for="prev-button-two">Move Backwards</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-five">
+                        <h1 class="submission-form__title">What about your lifestyles?</h1>
+                        <h2 class="submission-form__description">This information helps our AI generate a accurate and
+                            highly personalised plan for you</h2>
+
+                        <!--Activity level-->
+                        <div class="lifecycle-form__field--lower">
+                            <label class="lifestyle-field__label" for="activity-level">Activity Level:</label>
+                            <div class="lifestyle-field__select-wrapper">
+                                <select id="activity-level" class="lifestyle-field__select">
+                                    <option value="" disabled selected>Select Your Activity Level</option>
+                                    <option value="sedentary">Sedentary (Little exercise)</option>
+                                    <option value="light">Lightly Active (1-2 days/week)</option>
+                                    <option value="moderate">Moderately Active (3-5 days/week)</option>
+                                    <option value="active">Very Active (Daily exercise)</option>
+                                </select>
+                                <span class="material-symbols-outlined lifestyle-field__icon">expand_more</span>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">bedtime</span>
+                            <input type="number" class="auth-form__input" id="sleep-input" placeholder=" "
+                                inputmode="numeric" autocomplete="off" />
+                            <label class="auth-form__label" for="sleep-input">Average Sleep</label>
+                            <p class="auth-form__placeholder">&#40;e.g, 7-8 Hours&#41;</p>
+                        </div>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">water_full</span>
+                            <input type="number" class="auth-form__input" id="hydration-input" placeholder=" "
+                                autocomplete="off" inputmode="numeric" />
+                            <label class="auth-form__label" for="hydration-input">Hydration Level</label>
+                            <p class="auth-form__placeholder">&#40;e.g, 1-2 Litres&#41;</p>
+                        </div>
+
+                        <!--Diet Hurdles-->
+                        <div class="lifestyle-checkbox__container">
+                            <span class="lifestyle-checkbox__title">Biggest Hurdles (Select all that apply)</span>
+                            <div class="lifestyle-checkbox__grid">
+                                <div class="lifestyle-checkbox__item">
+                                    <input type="checkbox" id="hurdle-snacking" class="lifestyle-checkbox__input"
+                                        value="Late-night snacking">
+                                    <label for="hurdle-snacking" class="lifestyle-checkbox__label">Late Snacking</label>
+                                </div>
+                                <div class="lifestyle-checkbox__item">
+                                    <input type="checkbox" id="hurdle-sweets" class="lifestyle-checkbox__input"
+                                        value="Sweet tooth">
+                                    <label for="hurdle-sweets" class="lifestyle-checkbox__label">Sweet Tooth</label>
+                                </div>
+                                <div class="lifestyle-checkbox__item">
+                                    <input type="checkbox" id="hurdle-skipping" class="lifestyle-checkbox__input"
+                                        value="Skipping meals">
+                                    <label for="hurdle-skipping" class="lifestyle-checkbox__label">Skipping
+                                        Meals</label>
+                                </div>
+                                <div class="lifestyle-checkbox__item">
+                                    <input type="checkbox" id="hurdle-binge" class="lifestyle-checkbox__input"
+                                        value="Binge eating">
+                                    <label for="hurdle-binge" class="lifestyle-checkbox__label">Binge Eating</label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <input type="submit" class="auth-form__submit-btn" id="submission-btn-four"
+                                value="Next Step">
+                            <label class="u-hidden" for="submission-btn-four">Next Step</label>
+                        </div>
+
+                        <div class="submission-form__navigation">
+                            <div class="navigation__group">
+                                <span class="navigation__icon material-symbols-outlined">arrow_back_2</span>
+                                <input type="button" class="navigation__btn navigation__btn--prev" id="prev-btn-three">
+                                <label class="u-hidden" for="prev-button-three">Move Backwards</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-six">
+                        <h1 class="submission-form__title">Review Your Profile</h1>
+                        <h2 class="submission-form__description">Please confirm your details before our AI generates
+                            your personlised plan</h2>
+
+                        <!--Summary-->
+                        <div class="confirmation-summary">
+                            <div class="summary-group">
+                                <h3>Biometrics & Goals</h3>
+                                <p><span>Age:</span> <strong id="confirm-age"></strong></p>
+                                <p><span>Weight:</span> <strong id="confirm-weight"></strong></p>
+                                <p><span>Height:</span> <strong id="confirm-height"></strong></p>
+                                <p><span>Gender:</span> <strong id="confirm-gender"></strong></p>
+                                <p><span>Goal:</span> <strong id="confirm-goal"></strong></p>
+                                <p><span>Target Weight:</span> <strong id="confirm-target"></strong></p>
+                            </div>
+                            
+                            <div class="summary-group">
+                                <h3>Preferences & Lifestyles</h3>
+                                <p><span>Experience:</span> <strong id="confirm-experience"></strong></p>
+                                <p><span>Training Freq:</span> <strong id="confirm-frequency"></strong></p>
+                                <p><span>Menu Pref:</span> <strong id="confirm-menu"></strong></p>
+                                <p><span>Limitations:</span> <strong id="confirm-limitations"></strong></p>
+                                <p><span>Activity Level:</span> <strong id="confirm-activity"></strong></p>
+                                <p><span>Average Sleep:</span> <strong id="confirm-sleep"></strong></p>
+                                <p><span>Hydration:</span> <strong id="confirm-hydration"></strong></p>
+                                <p><span>Hurdles:</span> <strong id="confirm-hurdles"></strong></p>
+                            </div>
+                        </div>
+
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <input type="submit" class="auth-form__submit-btn" id="submission-btn-five"
+                                value="Generate Plan">
+                            <label class="u-hidden" for="submission-btn-five">Generate Plan</label>
+                        </div>
+
+                        <div class="submission-form__navigation">
+                            <div class="navigation__group">
+                                <span class="navigation__icon material-symbols-outlined">arrow_back_2</span>
+                                <input type="button" class="navigation__btn navigation__btn--prev" id="prev-btn-four">
+                                <label class="u-hidden" for="prev-button-four">Move Backwards</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-seven">
+                        <h1 class="submission-form__title">Your plan is being generated</h1>
+                        <h2 class="submission-form__description">Please wait a while for the AI generate your
+                            personalised nutritional and fitness plan.</h2>
+
+                        <div class="processing-list">
+                            <div class="processing-list__item processing-list__item--loading" id="processing-item-one">
+                                <div class="processing-list__icon-wrapper">
+                                    <span class="material-symbols-outlined"
+                                        id="processing-icon-one">progress_activity</span>
+                                </div>
+                                <span class="processing-list__text">Analyzing Your Biometrics</span>
+                            </div>
+                            <div class="processing-list__item processing-list__item--loading" id="processing-item-two">
+                                <div class="processing-list__icon-wrapper">
+                                    <span class="material-symbols-outlined"
+                                        id="processing-icon-two">progress_activity</span>
+                                </div>
+                                <span class="processing-list__text">Optimising Your Macros</span>
+                            </div>
+                            <div class="processing-list__item processing-list__item--loading"
+                                id="processing-item-three">
+                                <div class="processing-list__icon-wrapper">
+                                    <span class="material-symbols-outlined"
+                                        id="processing-icon-three">progress_activity</span>
+                                </div>
+                                <span class="processing-list__text">Selecting The Best Exercises</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="submission-form__container u-hidden" id="submission-container-eight">
+                        <h1 class="submission-form__title">Your plan is ready to be downloaded</h1>
+                        <h2 class="submission-form__description">You can now copy or download the generated personalised
+                            plan</h2>
+
+                        <!--Previously used iframe, except kept prompting for downloading the content-->
+                        <!--This should be a temporary replacement-->
+
+                        <object class="submission-form__pdf" id="submission-preview" type="application/pdf"></object>
+
+                        <div class="auth-form__field">
+                            <span class="auth-form__icon material-symbols-outlined">person</span>
+                            <input type="email" class="auth-form__input" id="email3-input" placeholder=" "
+                                autocomplete="off" />
+                            <label class="auth-form__label" for="email3-input">Email Address</label>
+                            <p class="auth-form__placeholder">&#40;someone@gmail.com&#41;</p>
+                        </div>
+
+                        <div class="auth-form__submit-wrapper auth-form__submit-wrapper--next">
+                            <a class="auth-form__submit-btn" id="download-btn" href="" download="fitness-plan-2026.pdf">
+                                Download PDF Plan
+                            </a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="footer__container">
+            <div class="footer__left">
+                <a href="mailto:contact@gymgenius.com" class="footer__link">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+            <div class="footer__right">
+                <p class="footer__copy">&copy; 2026 Gym Genius. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

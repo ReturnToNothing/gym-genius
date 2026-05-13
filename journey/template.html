@@ -1,0 +1,441 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Fitness & Nutrition Guide</title>
+    <style>
+        /* Base Styles for DOMPDF Compatibility */
+        @page {
+            margin: 0px;
+            size: A4 portrait;
+        }
+
+        body {
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+            color: #333333;
+            font-size: 13px;
+        }
+
+        .page-container {
+            width: 100%;
+            border-collapse: collapse;
+            height: 100%;
+        }
+
+        .sidebar {
+            width: 28%;
+            background-color: #1a2228;
+            color: #d1d5db;
+            vertical-align: top;
+            padding: 40px 25px;
+        }
+
+        .main-content {
+            width: 72%;
+            background-color: #f8f9fa;
+            vertical-align: top;
+            padding: 40px 35px;
+        }
+
+        .brand-title {
+            color: #163a9c;
+            font-size: 24px;
+            font-weight: bold;
+            margin-top: 0;
+            margin-bottom: 30px;
+            text-transform: uppercase;
+        }
+
+        .sidebar h3 {
+            color: #163a9c;
+            font-size: 14px;
+            text-transform: uppercase;
+            border-bottom: 1px solid #374151;
+            padding-bottom: 8px;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+
+        .sidebar p {
+            font-size: 13px;
+            line-height: 1.6;
+            margin: 0 0 8px 0;
+        }
+
+        .sidebar .label {
+            font-weight: bold;
+            color: #ffffff;
+        }
+
+        .main-header h1 {
+            font-size: 32px;
+            color: #1a2228;
+            margin: 0 0 10px 0;
+        }
+
+        .main-header p {
+            font-size: 16px;
+            color: #4b5563;
+            margin: 0 0 15px 0;
+        }
+
+        .header-divider {
+            height: 5px;
+            background-color: #163a9c;
+            margin-bottom: 30px;
+        }
+
+        .section-heading {
+            background-color: #1a2228;
+            color: #ffffff;
+            padding: 12px 15px;
+            font-size: 15px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .table-container {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            margin-bottom: 30px;
+            padding: 15px;
+        }
+
+        .schedule-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-table thead tr:first-child {
+            border-bottom: 3px solid #163a9c;
+        }
+
+        .schedule-table th {
+            background-color: #f3f4f6;
+            text-align: left;
+            padding: 10px;
+            font-size: 13px;
+            color: #1a2228;
+            font-weight: bold;
+            border-bottom: 1px solid #e5e7eb;
+        }
+
+        .schedule-table td {
+            padding: 12px 10px;
+            font-size: 12px;
+            border-bottom: 1px solid #f3f4f6;
+            vertical-align: top;
+            line-height: 1.5;
+            color: #374151;
+        }
+
+        .schedule-table tr:last-child td {
+            border-bottom: none;
+        }
+
+        .day-col {
+            color: #163a9c !important;
+            font-weight: bold;
+            width: 16%;
+        }
+
+        .target-col {
+            font-weight: bold;
+            color: #1a2228 !important;
+            width: 22%;
+        }
+
+        .diet-container {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 30px;
+        }
+
+        .diet-card {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: 3px solid #1a2228;
+            padding: 15px;
+            vertical-align: top;
+            width: 48%;
+        }
+
+        .diet-card--focus {
+            background-color: #ffffff;
+            border: 1px solid #e5e7eb;
+            border-top: 3px solid #163a9c;
+            padding: 15px;
+            vertical-align: top;
+            width: 48%;
+        }
+
+        .diet-spacer {
+            width: 4%;
+        }
+
+        .diet-title {
+            font-size: 15px;
+            font-weight: bold;
+            color: #1a2228;
+            margin-bottom: 12px;
+        }
+
+        .diet-card p {
+            font-size: 12px;
+            line-height: 1.6;
+            margin: 0;
+            color: #374151;
+        }
+
+        .diet-card .label {
+            font-weight: bold;
+            color: #1a2228;
+        }
+
+        .advice-box {
+            background-color: #ecfdf5;
+            border-left: 5px solid #163a9c;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+
+        .advice-box h2 {
+            font-size: 18px;
+            color: #1a2228;
+            margin: 0 0 10px 0;
+        }
+
+        .advice-box p {
+            font-size: 13px;
+            line-height: 1.6;
+            color: #374151;
+            margin: 0;
+        }
+
+        .footer {
+            text-align: center;
+            font-size: 11px;
+            color: #9ca3af;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <table class="page-container">
+        <tr>
+            <!-- Sidebar Column -->
+            <td class="sidebar">
+                <h1 class="brand-title">GYM GENIUS</h1>
+
+                <h3>USER INFO</h3>
+                <p>
+                    <span class="label">Age:</span>  &verbar;
+                    <span class="label">Weight:</span>                 </p>
+                <p>
+                    <span class="label">Height:</span>
+                     &verbar; <span class="label">BF&percnt;:</span>
+                    22&percnt;
+                </p>
+                <p>
+                    <span class="label">Goal: </span>Build Muscle
+                </p>
+                <p>
+                    <span class="label">Experience: </span>Begineer
+                </p>
+                <p>
+                    <span class="label">Location: </span>Gym
+                </p>
+
+                <h3>DAILY TARGETS</h3>
+                <p><span class="label">Calories:</span>
+                    2,100 kcal
+                </p>
+                <p><span class="label">Protein:</span>
+                    160g
+                </p>
+                <p><span class="label">Carbs:</span>
+                    215g | <span class="label">Fats:</span>
+                    65g
+                </p>
+
+                <h3>HABITS TO BUILD</h3>
+                                    <p>•
+                        Drink 3L of water daily                    </p>
+                                    <p>•
+                        Aim for 8 hours of sleep                    </p>
+                                    <p>•
+                        Daily 10-min stretching                    </p>
+                
+                <h3>HABITS TO AVOID</h3>
+                                    <p>•
+                        none                    </p>
+                                    <p>•
+                        none                    </p>
+                                    <p>•
+                        none                    </p>
+                            </td>
+
+            <!-- Main Content Column -->
+            <td class="main-content">
+                <div class="main-header">
+                    <h1>Fitness & Nutrition Plan</h1>
+                    <p>Unified Exercise & Nutritional Structure for:
+                        Not Specified                    </p>
+                    <div class="header-divider"></div>
+                </div>
+
+                <div class="section-heading">Weekly Workout Plans</div>
+
+                <div class="table-container">
+                    <table class="schedule-table">
+                        <thead>
+                            <tr>
+                                <th>Day</th>
+                                <th>Target</th>
+                                <th>Exercises, Sets & Reps</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Monday                                    </td>
+                                    <td class="target-col">
+                                        Full Body Strength                                    </td>
+                                    <td>
+                                                                                    •
+                                            Pushups: 3 Sets x 12<br>
+                                                                                    •
+                                            Bodyweight Squats: 3x15<br>
+                                                                                    •
+                                            Plank: 3 Sets x 45s<br>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Tuesday                                    </td>
+                                    <td class="target-col">
+                                        Active Rest                                    </td>
+                                    <td>
+                                                                                    •
+                                            Brisk Walk: 30 Mins<br>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Wednesday                                    </td>
+                                    <td class="target-col">
+                                        Lower Body &amp; Core                                    </td>
+                                    <td>
+                                                                                    •
+                                            Lunges: 3 Sets x 12<br>
+                                                                                    •
+                                            Glute Bridges: 3x15<br>
+                                                                                    •
+                                            Leg Raises: 3 Sets x 15<br>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Thursday                                    </td>
+                                    <td class="target-col">
+                                        Active Rest                                    </td>
+                                    <td>
+                                                                                    •
+                                            Light Yoga: 20 Mins<br>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Friday                                    </td>
+                                    <td class="target-col">
+                                        Upper Body &amp; Cardio                                    </td>
+                                    <td>
+                                                                                    •
+                                            Dips: 3 Sets x 10<br>
+                                                                                    •
+                                            Mountain Climber: 3x30s<br>
+                                                                                    •
+                                            Burpees: 3 Sets x 10<br>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Saturday                                    </td>
+                                    <td class="target-col">
+                                        Active Rest                                    </td>
+                                    <td>
+                                                                                    •
+                                            Brisk Walk: 45 Mins<br>
+                                                                            </td>
+                                </tr>
+                                                            <tr>
+                                    <td class="day-col">
+                                        Sunday                                    </td>
+                                    <td class="target-col">
+                                        Full Rest                                    </td>
+                                    <td>
+                                                                                    •
+                                            Full Body Stretch: 15m<br>
+                                                                            </td>
+                                </tr>
+                                                    </tbody>
+                    </table>
+                </div>
+
+                <div class="section-heading">Nutritional Plans (
+                    2,100 kcal)
+                </div>
+
+                <table class="diet-container">
+                    <tr>
+                        <td class="diet-card--focus">
+                            <div class="diet-title">
+                                Plan A: Performance (Training Days)                            </div>
+                            <p>
+                                <span class="label">B-fast:</span>
+                                80g Oats + 1 Scoop Pro<br>
+                                <span class="label">Lunch:</span>
+                                150g Chicken + 1c Rice<br>
+                                <span class="label">Snack:</span>
+                                1 Apple + 20g Almonds<br>
+                                <span class="label">Dinner:</span>
+                                150g Salmon + Veggies                            </p>
+                        </td>
+                        <td class="diet-spacer"></td>
+                        <td class="diet-card">
+                            <div class="diet-title">
+                                Plan B: Recovery (Rest Days)                            </div>
+                            <p>
+                                <span class="label">B-fast:</span>
+                                3 Eggs + 1 Slice Toast<br>
+                                <span class="label">Lunch:</span>
+                                150g Tuna + Large Salad<br>
+                                <span class="label">Snack:</span>
+                                1 Greek Yogurt Cup<br>
+                                <span class="label">Dinner:</span>
+                                150g Steak + Asparagus                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <div class="advice-box">
+                    <h2>Actionable Advice</h2>
+                    <p>
+                        Since you have no diet hurdles, focus on consistency. Use Plan A on training days to fuel your home workouts and Plan B on rest days to optimize recovery.                        <b>Always consult a fitness professional or GP before starting a new exercise.</b>
+                    </p>
+                </div>
+
+                <div class="footer">
+                    GYM GENIUS &copy; 2026                </div>
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>
