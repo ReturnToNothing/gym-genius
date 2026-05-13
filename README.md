@@ -12,7 +12,7 @@
    apiKey = your_api_key_here
 
 4. **Preview the application:**
-   Launch the project using a local server (e.g., XAMPP, MAMP, or VS Code Live Server for PHP) to preview the HTML and test the features.
+   Launch the project using a local server (e.g., XAMPP, MAMP, or VS Code Live Server for PHP) or locally (e.g. Live Preview) to preview the HTML and test the features.
 
 **Two quick tips before you publish:**
 * **Never commit your actual API key to GitHub.** Always make sure the `index.php` you upload to GitHub just says `"your_api_key_here"` so anyone can't steal your Gemini API credits!
