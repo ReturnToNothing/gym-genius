@@ -8,9 +8,10 @@
 
 2. **Set up the variables:**
    Open the index.php file and insert your Gemini API key:
+   ```php
    apiKey = your_api_key_here
 
-3. **Preview the application:**
+4. **Preview the application:**
    Launch the project using a local server (e.g., XAMPP, MAMP, or VS Code Live Server for PHP) to preview the HTML and test the features.
 
 **Two quick tips before you publish:**
