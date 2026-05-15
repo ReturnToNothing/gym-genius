@@ -2,7 +2,7 @@
 **AI-powered fitness & nurition white-label platform (prototype)**
 
 # Demonstration 
-1. **You can find both dashboard and end-user form following links:**
+1. You can access both dashboard and end-user form from these links:**
    https://es1870.brighton.domains/ci536-project/
    https://es1870.brighton.domains/ci536-eu/
 
